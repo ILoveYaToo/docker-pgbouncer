@@ -7,6 +7,6 @@ LATEST_RELEASE=$(curl -Ls 'https://api.github.com/repos/pgbouncer/pgbouncer.gith
 IFS='.' read -r -a LATEST_RELEASE_SPLIT <<< "$LATEST_RELEASE"
 
 ## Generate URL 
-LATEST_RELEASE_URL="https://github.com/pgbouncer/pgbouncer/releases/download/pgbouncer_${LATEST_RELEASE_SPLIT[0]}_${LATEST_RELEASE_SPLIT[1]}_${LATEST_RELEASE_SPLIT[2]}/pgbouncer-1.16.1.tar.gz"
+LATEST_RELEASE_URL="https://github.com/pgbouncer/pgbouncer/releases/download/pgbouncer_${LATEST_RELEASE_SPLIT[0]}_${LATEST_RELEASE_SPLIT[1]}_${LATEST_RELEASE_SPLIT[2]}/pgbouncer-${LATEST_RELEASE}.tar.gz"
 
 wget $LATEST_RELEASE_URL
