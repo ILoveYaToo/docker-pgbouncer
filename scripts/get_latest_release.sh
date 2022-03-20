@@ -9,6 +9,6 @@ if docker manifest inspect iloveyatoo/pgbouncer:$LATEST_RELEASE >/dev/null; then
 else
     cd ~/docker-pgbouncer
     ls
-    docker build -t iloveyatoo/pgbouncer:$LATEST_RELEASE .
+    docker build -t iloveyatoo/pgbouncer:$LATEST_RELEASE --build-arg PGBOUNCER_VERSION=$LATEST_RELEASE --no-cache .
     docker push iloveyatoo/pgbouncer:$LATEST_RELEASE
 fi
