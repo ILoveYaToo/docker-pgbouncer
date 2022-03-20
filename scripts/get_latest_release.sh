@@ -8,6 +8,6 @@ if docker manifest inspect iloveyatoo/pgbouncer:$LATEST_RELEASE >/dev/null; then
     echo "Image already exists"
 else
     cd ~
-    docker build -t iloveyatoo/pgbouncer:$LATEST_RELEASE
+    docker build -t iloveyatoo/pgbouncer:$LATEST_RELEASE .
     docker push iloveyatoo/pgbouncer:$LATEST_RELEASE
 fi
