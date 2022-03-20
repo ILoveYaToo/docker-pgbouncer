@@ -1,6 +1,6 @@
 ## docker-pgbouncer
 
-Bundles [pgbouncer](https://www.pgbouncer.org) into a lightweight Alpine Linux container
+Bundles [pgbouncer](https://www.pgbouncer.org) into a lightweight Alpine Linux container.
 
 ## Build
 ```
