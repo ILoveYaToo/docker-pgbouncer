@@ -7,7 +7,7 @@ LATEST_RELEASE=$(curl -Ls 'https://api.github.com/repos/pgbouncer/pgbouncer.gith
 if docker manifest inspect iloveyatoo/pgbouncer:$LATEST_RELEASE >/dev/null; then
     echo "Image already exists"
 else
-    cd ~
+    cd ~/docker-pgbouncer
     ls
     docker build -t iloveyatoo/pgbouncer:$LATEST_RELEASE .
     docker push iloveyatoo/pgbouncer:$LATEST_RELEASE
