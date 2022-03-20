@@ -1,0 +1,21 @@
+---
+version: v1.0
+name: Build PGBouncer
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Build PGBouncer Container
+    run:
+      when: "change_in('/Dockerfile', '/scripts', {pipeline_file: 'ignore'})"
+    task:
+      secrets:
+        - name: DOCKER_HUB_ILOVEYATOO
+      jobs:
+        - name: Build Container
+          commands:
+            - checkout
+            - cd scripts
+            - bash get_latest_release.sh
+    dependencies: []
