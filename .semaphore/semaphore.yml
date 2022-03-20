@@ -15,5 +15,6 @@ blocks:
           commands:
             - checkout
             - cd scripts
+            - echo "$DOCKER_HUB_PASS_ILOVEYATOO" | docker login --username "$DOCKER_HUB_USER_ILOVEYATOO" --password-stdin
             - bash get_latest_release.sh
     dependencies: []
